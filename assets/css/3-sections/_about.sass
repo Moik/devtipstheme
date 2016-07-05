@@ -1,0 +1,85 @@
+.face-lockup
+	max-width: 780px
+	+display(flex)
+	margin: 0 auto
+	+align-items(center)
+	+justify-content(space-between)
+
+	.face-img
+		+size(200px)
+		background-image: url(/assets/img/#{$avatar-path})
+		background-size: cover
+		background-position: center
+		border-radius: 50%
+		+order(3)
+
+	[class^="icon-"]
+		+size(100px)
+		background: $bgcolor
+		border-radius: 50%
+
+		path
+			fill: $accent
+
+		&.icon-pencil
+			+order(1)
+		&.icon-mouse
+			+order(2)
+		&.icon-browser
+			+order(4)
+		&.icon-video
+			+order(5)
+
+@media screen and (max-width: 650px)
+	.face-lockup
+		display: block
+		text-align: center			
+
+		.face-img
+			display: block
+			margin: 0 auto 30px
+
+		[class^="icon-"]
+			display: inline-block
+			margin: 10px 9%
+
+.blurb
+	max-width: 620px
+	padding: 0 15px
+	margin: 50px auto
+	font-size: 24px
+	font-weight: 300
+	text-align: center
+
+.skill-lockup
+	max-width: 540px
+	margin: 100px auto
+	color: #999
+	+clearfix
+
+	.skill-unit
+		width: 270px
+		float: left
+
+		.skill-icons
+			font-size: 0
+			margin: 2px 0 30px
+
+			span
+				display: inline-block
+				+size(10px)
+				background: #fff
+				margin-right: 8px
+				border: 2px solid $accent
+				border-radius: 50%
+
+			@for $i from 1 to 10
+				&.skill-#{$i} span:nth-child(n+#{$i+1})
+					@extend %skill-color
+
+@media screen and (max-width: 541px)
+	.skill-lockup
+		max-width: 270px
+
+%skill-color
+	border-color: $bgcolor

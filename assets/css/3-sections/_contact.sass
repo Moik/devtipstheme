@@ -1,0 +1,37 @@
+#contact
+	text-align: center
+
+.social-links
+	max-width: 700px
+	margin: 0 auto 50px
+	+display(flex)
+	+justify-content(space-around)
+	+flex-wrap(wrap)
+
+	a
+		display: block
+		margin: 20px
+		background: $accent
+		+size(50px)
+		color: #fff
+		font-size: 28px
+		line-height: 50px
+		border-radius: 50%
+		+transition()
+
+		&:hover
+			+transform(scale(1.2))
+
+.bar
+	width: 250px
+	height: 0
+	border-top: 4px solid $accent
+	margin: 0 auto 70px
+
+.biglink
+	display: inline-block
+	font:
+		size: 72px
+		weight: 700
+	line-height: 1
+	width: 90%
