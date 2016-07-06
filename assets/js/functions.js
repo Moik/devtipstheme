@@ -49,7 +49,7 @@ function workLoad() {
 		var $this = $(this),
 			newTitle = $this.find('strong').text(),
 			spinner = "<div class='loader'>Loading...</div>",
-			newHTML = "../work/" + $this.data("folder");
+			newHTML = "../../work/" + $this.data("folder");
 		$('.project-title').text(newTitle);
 		$(".project-load").html(spinner).load(newHTML);
 	});
